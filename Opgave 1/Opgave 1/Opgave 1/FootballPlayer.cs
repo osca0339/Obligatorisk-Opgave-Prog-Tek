@@ -15,9 +15,9 @@ namespace Opgave_1
             get => _id;
             set
             {
-                if (value == null)
+                if (value < 1)
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentOutOfRangeException();
                 }
 
                 _id = value;
@@ -31,7 +31,7 @@ namespace Opgave_1
             {
                 if (value.Length <= 4)
                 {
-                    throw new ArgumentException("Name must be longer than or equal to 4 ");
+                    throw new ArgumentOutOfRangeException("Name must be longer than or equal to 4 ");
                 }
 
                 _name = value;
